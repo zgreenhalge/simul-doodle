@@ -3,7 +3,7 @@ from Map.GrassTile import GrassTile
 from Map.WaterTile import WaterTile
 import random
 
-class MapManager:
+class BoardManager:
 	
 	tiles = [GrassTile, WaterTile]
 
@@ -18,7 +18,7 @@ class MapManager:
 		return new_map
 
 	def new_random_tile(self, x=-1, y=-1):
-		return MapManager.tiles[random.randint(0, len(MapManager.tiles)-1)](x, y)
+		return BoardManager.tiles[random.randint(0, len(BoardManager.tiles)-1)](x, y)
 
 	def draw(self, screen, to_draw=None):
 		if to_draw == None: to_draw = self.map
