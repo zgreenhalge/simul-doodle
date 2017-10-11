@@ -3,20 +3,20 @@ from Units.Unit import Unit
 
 
 def update(screen):
-    board.draw(screen)
-    unit.update(screen)
+	board.draw(screen)
+	unit.update(screen)
 
 
 def get_board():
-    return board
+	return board
 
 
 def board_height():
-    return board.height
+	return board.height
 
 
 def board_width():
-    return board.width
+	return board.width
 
 
 board = BoardManager()
