@@ -3,11 +3,11 @@ from Map.GrassTile import GrassTile
 from Map.WaterTile import WaterTile
 import random
 
+
 class BoardManager:
-	
 	tiles = [GrassTile, WaterTile]
 
-	def	create_new_map(self):
+	def create_new_map(self):
 		new_map = []
 		for x in range(self.width):
 			new_map.append([])
@@ -18,11 +18,11 @@ class BoardManager:
 		return new_map
 
 	def new_random_tile(self, x=-1, y=-1):
-		return BoardManager.tiles[random.randint(0, len(BoardManager.tiles)-1)](x, y)
+		return BoardManager.tiles[random.randint(0, len(BoardManager.tiles) - 1)](x, y)
 
 	def draw(self, screen, to_draw=None):
 		if to_draw == None: to_draw = self.map
-		screen.fill((0, 0, 0)) # Black out the screen first
+		screen.fill((0, 0, 0))  # Black out the screen first
 
 		for x in range(self.width):
 			for y in range(self.height):

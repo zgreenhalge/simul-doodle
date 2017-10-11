@@ -1,7 +1,7 @@
 import pygame
 
-class MapTile:
 
+class MapTile:
 	tile_width = tile_height = 50
 
 	def __init__(self, x, y):
@@ -35,4 +35,4 @@ class MapTile:
 	def get_rectangle(self):
 		width = MapTile.tile_width
 		height = MapTile.tile_height
-		return pygame.Rect(self.x*width, self.y*height, width, height)
+		return pygame.Rect(self.x * width, self.y * height, width, height)

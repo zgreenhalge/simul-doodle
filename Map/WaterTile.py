@@ -1,5 +1,6 @@
 from Map.MapTile import MapTile
 
+
 class WaterTile(MapTile):
 	pass
 
