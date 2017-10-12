@@ -1,4 +1,4 @@
-from Managers.BoardManager import BoardManager
+from Managers.BoardManager import GameMap, BoardManager
 from Units.Unit import Unit
 
 
@@ -19,6 +19,6 @@ def board_width():
 	return board.width
 
 
-board = BoardManager()
+board = GameMap()
 unit = Unit(0, 0)
 unit.go_to(board_width() - 1, board_height() - 1)

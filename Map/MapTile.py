@@ -36,3 +36,14 @@ class MapTile:
 		width = MapTile.tile_width
 		height = MapTile.tile_height
 		return pygame.Rect(self.x * width, self.y * height, width, height)
+
+
+class Tile:
+	def __init__(self, x, y, width, height, terrain, movement_mod, color):
+		self.rect = pygame.Rect(x, y, width, height)
+		self.terrain = terrain
+		self.movement_mod = movement_mod
+		self.color = color
+
+	def draw(self, screen):
+		pygame.draw.rect(screen, self.color, self.rect)
