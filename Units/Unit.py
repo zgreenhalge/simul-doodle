@@ -33,7 +33,7 @@ class Unit:
 				self.y * game_map.tile_size + int(game_map.tile_size / 2))
 
 	def draw(self, screen, game_map):
-		# TODO ADAM screen position should be gathered without using the map
+		# TODO ADAM could screen position be gathered without utilizing map details?
 		pygame.draw.circle(screen, (0, 0, 0), self.get_screen_loc(game_map), self.radius)
 
 	def update(self, screen, game_map):
