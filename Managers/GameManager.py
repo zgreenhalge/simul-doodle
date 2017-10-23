@@ -1,24 +1,5 @@
-from Managers.BoardManager import BoardManager
-from Units.Unit import Unit
-
-
-def update(screen):
+def update(screen, board, unit):
 	board.draw(screen)
-	unit.update(screen)
+	unit.update(screen, board)
+	unit.go_to(board, board.width - 1, board.height - 1)
 
-
-def get_board():
-	return board
-
-
-def board_height():
-	return board.height
-
-
-def board_width():
-	return board.width
-
-
-board = BoardManager()
-unit = Unit(0, 0)
-unit.go_to(board_width() - 1, board_height() - 1)

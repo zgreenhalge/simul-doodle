@@ -3,10 +3,13 @@ from pygame.locals import *
 
 from Managers import GameManager
 from Managers.event_handlers import handle_keys
+from Map.game_map import GameMap
+from Units.Unit import Unit
 
 # import game
 
 if __name__ == '__main__':
+	# SETTINGS
 	pygame.init()
 	pygame.display.set_caption("Ayy Lmao")
 	screen = pygame.display.set_mode([500, 500], RESIZABLE)
@@ -14,7 +17,12 @@ if __name__ == '__main__':
 	done = False
 	ticks = 0
 
-	while ticks < 100 and not done:
+	# MAP AND UNIT INITIALIZE
+	unit = Unit(0, 0)
+	game_map = GameMap()
+
+	# while ticks < 100 and not done:
+	while not done:
 		for event in pygame.event.get():
 			quit = handle_keys(event).get('quit')
 			resize = handle_keys(event).get('resize')
@@ -37,6 +45,6 @@ if __name__ == '__main__':
 		pygame.display.update()  # No args: same as flip
 		ticks += 1
 		if ticks % 10 == 0:
-			GameManager.update(screen)
+			GameManager.update(screen, game_map, unit)
 			print(ticks)
 		clock.tick(60)  # TODO make this scale w user selected speed somehow
